@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discord Emoji</title>
+  <style>
+    /* Add some basic styling to the webpage */
+    body {
+      background-color: #2f3136; /* Dark background color */
+      color: #fff; /* White text color */
+      font-family: 'Helvetica Neue', sans-serif; /* Use the Helvetica Neue font */
+      text-align: center;
+    }
+
+    /* Style the "emoji" div */
+    #emoji {
+      font-size: 150px; /* Make the emoji larger */
+      margin-top: 100px; /* Add some space above the emoji */
+    }
+
+    /* Style the "refres" button */
+    #refresh {
+      background-color: #7289da; /* Discord blue background */
+      color: white; /* White text */
+      padding: 12px 20px; /* Add some padding */
+      border: none; /* Remove the border */
+      cursor: pointer; /* Add a cursor on hover */
+      margin-top: 20px; /* Add some space above the button */
+      border-radius: 4px; /* Round the button edges */
+    }
+
+    /* Change the button color on hover */
+    #refresh:hover {
+      background-color: #5f7dbf;
+    }
+  </style>
+</head>
+<body>
+  <div id="emoji"></div>
+  <button id="refresh">Refresh</button>
+  <script>
+    // An array of emojis
+    var emojis = ["😀", "😃", "😄", "😁", "😆","😂","😎","😍","😘","🥰","😋","😪","😴","😛","🤑"];
+    // Select a random emoji
+    var randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+    // Display the emoji in the "emoji" div
+    document.getElementById("emoji").innerHTML = randomEmoji;
+    // Add a click event to the "refresh" button
+    document.getElementById("refresh").addEventListener("click", function(){
+      randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+      document.getElementById("emoji").innerHTML = randomEmoji;
+    });
+  </script>
+</body>
+</html>
